@@ -19,16 +19,19 @@ function showSlide(index) {
     indicators[index].classList.add('active');
 }
 
+// Event listener untuk tombol prev (sebelumnya)
 prevBtn.addEventListener('click', () => {
     currentSlide = currentSlide <= 0 ? slides.length - 1 : currentSlide - 1;
     showSlide(currentSlide);
 });
 
+// Event listener untuk tombol next (berikutnya)
 nextBtn.addEventListener('click', () => {
     currentSlide = currentSlide >= slides.length - 1 ? 0 : currentSlide + 1;
     showSlide(currentSlide);
 });
 
+// Menangani klik pada indikator (dots)
 indicators.forEach(indicator => {
     indicator.addEventListener('click', () => {
         const index = parseInt(indicator.getAttribute('data-slide'));
@@ -45,7 +48,7 @@ darkModeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
 });
 
-// Hamburger menu
+// Hamburger menu untuk navigasi di perangkat mobile
 hamburger.addEventListener('click', () => {
     mainNav.classList.toggle('active');
 });
